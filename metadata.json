@@ -1,0 +1,5 @@
+{
+  "name": "SportMedical Check - CMC Clone",
+  "description": "An interactive tool to determine the required medical examination type for various sports activities, based on Italian Sports Medicine protocols.",
+  "requestFramePermissions": []
+}
