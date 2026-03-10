@@ -68,21 +68,21 @@ export const PROTOCOLS: Record<string, ProtocolDetail> = {
     exams: ['Anamnesi', 'Esame obiettivo', 'ECG a riposo', 'ECG dopo prova da sforzo', 'Esame urine', 'Esame acuità visiva', 'Spirometria', 'Visita neurologica', 'EEG alla prima visita', 'Visita ORL', 'Audiometria']
   },
   'B4bis': {
-     code: 'B4bis',
-     title: 'Tabella B4 Bis',
-     description: 'Volo a motore/vela',
-     exams: ['Anamnesi', 'Esame obiettivo', 'ECG a riposo', 'ECG dopo prova da sforzo', 'Esame urine', 'Esame acuità visiva', 'Spirometria', 'Visita ORL', 'Audiometria']
+    code: 'B4bis',
+    title: 'Tabella B4 Bis',
+    description: 'Volo a motore/vela',
+    exams: ['Anamnesi', 'Esame obiettivo', 'ECG a riposo', 'ECG dopo prova da sforzo', 'Esame urine', 'Esame acuità visiva', 'Spirometria', 'Visita ORL', 'Audiometria']
   }
 };
 
 // Add generic definitions for CIP
 ['A1 cip', 'A3 cip', 'B1 cip', 'B2 cip', 'Specifica'].forEach(k => {
-    PROTOCOLS[k] = {
-        code: k,
-        title: k.includes('cip') ? `Protocollo CIP ${k.split(' ')[0]}` : k,
-        description: 'Protocollo specifico per atleti con disabilità (CIP). Contattare il centro per dettagli sui test integrativi.',
-        exams: ['Protocollo base (vedi tabella corrispondente)', 'Visita oculistica (se ipovedenti)', 'Esami specifici per patologia (es. lesioni mieliche)']
-    };
+  PROTOCOLS[k] = {
+    code: k,
+    title: k.includes('cip') ? `Protocollo CIP ${k.split(' ')[0]}` : k,
+    description: 'Protocollo specifico per atleti con disabilità (CIP). Contattare il centro per dettagli sui test integrativi.',
+    exams: ['Protocollo base (vedi tabella corrispondente)', 'Visita oculistica (se ipovedenti)', 'Esami specifici per patologia (es. lesioni mieliche)']
+  };
 });
 
 // RAW Data parser helper function logic applied to generate this list
@@ -93,8 +93,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Aeromodellismo',
     visitType: 'A1',
     validityYears: 2,
-    minAgeM: 10, maxAgeM: null,
-    minAgeF: 10, maxAgeF: null,
+    minAgeM: 12, maxAgeM: null,
+    minAgeF: 12, maxAgeF: null,
     ageType: 'Anagrafica'
   },
   {
@@ -113,8 +113,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Aerostatica',
     visitType: 'A4',
     validityYears: 2,
-    minAgeM: 17, maxAgeM: null,
-    minAgeF: 17, maxAgeF: null,
+    minAgeM: 16, maxAgeM: null,
+    minAgeF: 16, maxAgeF: null,
     ageType: 'Anagrafica'
   },
   {
@@ -287,8 +287,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Attività Subacquea',
     visitType: 'B3',
     validityYears: 1,
-    minAgeM: 12, maxAgeM: null,
-    minAgeF: 12, maxAgeF: null,
+    minAgeM: 8, maxAgeM: null,
+    minAgeF: 8, maxAgeF: null,
     ageType: 'Sportiva',
     seasonPeriod: '01/01 - 31/12'
   },
@@ -409,8 +409,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Sport di Squadra',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 9, maxAgeM: 38,
-    minAgeF: 9, maxAgeF: 32,
+    minAgeM: 9, maxAgeM: null,
+    minAgeF: 9, maxAgeF: null,
     ageType: 'Solare'
   },
   {
@@ -439,8 +439,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Sport Invernali',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 12, maxAgeM: null,
-    minAgeF: 12, maxAgeF: null,
+    minAgeM: 8, maxAgeM: null,
+    minAgeF: 8, maxAgeF: null,
     ageType: 'Sportiva',
     seasonPeriod: '01/07 - 30/06'
   },
@@ -470,8 +470,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Bocce',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 11, maxAgeM: 50,
-    minAgeF: 11, maxAgeF: 50,
+    minAgeM: 11, maxAgeM: 55,
+    minAgeF: 11, maxAgeF: 55,
     ageType: 'Solare'
   },
   {
@@ -500,8 +500,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Caccia',
     visitType: 'A3',
     validityYears: 1,
-    minAgeM: 14, maxAgeM: null,
-    minAgeF: 14, maxAgeF: null,
+    minAgeM: 13, maxAgeM: null,
+    minAgeF: 13, maxAgeF: null,
     ageType: 'Solare'
   },
   {
@@ -551,7 +551,7 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Sport di Squadra',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 15, maxAgeM: 70,
+    minAgeM: 15, maxAgeM: null,
     minAgeF: null, maxAgeF: null,
     ageType: 'Solare'
   },
@@ -571,8 +571,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Canottaggio',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 9, maxAgeM: 60,
-    minAgeF: 9, maxAgeF: 60,
+    minAgeM: 9, maxAgeM: null,
+    minAgeF: 9, maxAgeF: null,
     ageType: 'Solare'
   },
   {
@@ -601,8 +601,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Ciclismo',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 13, maxAgeM: null,
-    minAgeF: 13, maxAgeF: null,
+    minAgeM: 8, maxAgeM: null,
+    minAgeF: 8, maxAgeF: null,
     ageType: 'Solare'
   },
   {
@@ -621,8 +621,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Cinotecnica',
     visitType: 'A3',
     validityYears: 1,
-    minAgeM: 10, maxAgeM: 75,
-    minAgeF: 10, maxAgeF: 75,
+    minAgeM: 10, maxAgeM: 80,
+    minAgeF: 10, maxAgeF: 80,
     ageType: 'Solare'
   },
   {
@@ -796,8 +796,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Acquatici',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 15, maxAgeM: null,
-    minAgeF: 15, maxAgeF: null,
+    minAgeM: 15, maxAgeM: 75,
+    minAgeF: 15, maxAgeF: 75,
     ageType: 'Solare'
   },
   {
@@ -816,8 +816,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Kickboxing',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 10, maxAgeM: 50,
-    minAgeF: 10, maxAgeF: 50,
+    minAgeM: 10, maxAgeM: null,
+    minAgeF: 10, maxAgeF: null,
     ageType: 'Anagrafica'
   },
   {
@@ -826,8 +826,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Kickboxing',
     visitType: 'B5',
     validityYears: 1,
-    minAgeM: 16, maxAgeM: 40,
-    minAgeF: 16, maxAgeF: 40,
+    minAgeM: 16, maxAgeM: null,
+    minAgeF: 16, maxAgeF: null,
     ageType: 'Anagrafica'
   },
   {
@@ -836,8 +836,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Kickboxing',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 8, maxAgeM: 50,
-    minAgeF: 8, maxAgeF: 50,
+    minAgeM: 8, maxAgeM: null,
+    minAgeF: 8, maxAgeF: null,
     ageType: 'Anagrafica'
   },
   {
@@ -856,8 +856,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Motociclismo',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 8, maxAgeM: 70,
-    minAgeF: 8, maxAgeF: 70,
+    minAgeM: 8, maxAgeM: 75,
+    minAgeF: 8, maxAgeF: 75,
     ageType: 'Anagrafica'
   },
   {
@@ -866,8 +866,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Motonautica',
     visitType: 'A2',
     validityYears: 1,
-    minAgeM: 12, maxAgeM: 55,
-    minAgeF: 12, maxAgeF: 55,
+    minAgeM: 12, maxAgeM: 70,
+    minAgeF: 12, maxAgeF: 70,
     ageType: 'Anagrafica'
   },
   {
@@ -876,8 +876,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Motonautica',
     visitType: 'A2',
     validityYears: 1,
-    minAgeM: 12, maxAgeM: 55,
-    minAgeF: 12, maxAgeF: 55,
+    minAgeM: 12, maxAgeM: 70,
+    minAgeF: 12, maxAgeF: 70,
     ageType: 'Anagrafica'
   },
   {
@@ -919,8 +919,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Orientamento',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 13, maxAgeM: 75,
-    minAgeF: 13, maxAgeF: 75,
+    minAgeM: 13, maxAgeM: 80,
+    minAgeF: 13, maxAgeF: 80,
     ageType: 'Solare'
   },
   {
@@ -929,8 +929,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Sport di Squadra',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 10, maxAgeM: null,
-    minAgeF: 10, maxAgeF: null,
+    minAgeM: 8, maxAgeM: null,
+    minAgeF: 8, maxAgeF: null,
     ageType: 'Sportiva',
     seasonPeriod: '01/01 - 31/12'
   },
@@ -1031,8 +1031,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Pesca',
     visitType: 'A1',
     validityYears: 2,
-    minAgeM: 10, maxAgeM: null,
-    minAgeF: 10, maxAgeF: null,
+    minAgeM: 8, maxAgeM: null,
+    minAgeF: 8, maxAgeF: null,
     ageType: 'Sportiva',
     seasonPeriod: '01/01 - 31/12'
   },
@@ -1052,8 +1052,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Pugilato',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 13, maxAgeM: 40,
-    minAgeF: 13, maxAgeF: 40,
+    minAgeM: 13, maxAgeM: 65,
+    minAgeF: 13, maxAgeF: 65,
     ageType: 'Anagrafica'
   },
   {
@@ -1072,8 +1072,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Pugilato',
     visitType: 'B5',
     validityYears: 1,
-    minAgeM: 18, maxAgeM: 40,
-    minAgeF: 18, maxAgeF: 40,
+    minAgeM: 18, maxAgeM: null,
+    minAgeF: 18, maxAgeF: null,
     ageType: 'Anagrafica'
   },
   {
@@ -1082,8 +1082,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Acquatici',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 8, maxAgeM: null,
-    minAgeF: 8, maxAgeF: null,
+    minAgeM: 8, maxAgeM: 75,
+    minAgeF: 8, maxAgeF: 75,
     ageType: 'Solare'
   },
   {
@@ -1092,8 +1092,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Sport di Squadra',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 12, maxAgeM: 42,
-    minAgeF: 12, maxAgeF: 42,
+    minAgeM: 12, maxAgeM: 48,
+    minAgeF: 12, maxAgeF: 48,
     ageType: 'Solare'
   },
   {
@@ -1202,8 +1202,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Sci nautico',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 18, maxAgeM: null,
-    minAgeF: 18, maxAgeF: null,
+    minAgeM: 12, maxAgeM: null,
+    minAgeF: 12, maxAgeF: null,
     ageType: 'Solare'
   },
   {
@@ -1272,8 +1272,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Sport di Squadra',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 9, maxAgeM: 38,
-    minAgeF: 9, maxAgeF: 32,
+    minAgeM: 9, maxAgeM: null,
+    minAgeF: 9, maxAgeF: null,
     ageType: 'Solare'
   },
   {
@@ -1302,8 +1302,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Racchetta',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 11, maxAgeM: 60,
-    minAgeF: 11, maxAgeF: 60,
+    minAgeM: 11, maxAgeM: null,
+    minAgeF: 11, maxAgeF: null,
     ageType: 'Anagrafica'
   },
   {
@@ -1362,8 +1362,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Racchetta',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 8, maxAgeM: 80,
-    minAgeF: 8, maxAgeF: 80,
+    minAgeM: 8, maxAgeM: null,
+    minAgeF: 8, maxAgeF: null,
     ageType: 'Anagrafica'
   },
   {
@@ -1402,8 +1402,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Vari',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 15, maxAgeM: 60,
-    minAgeF: 15, maxAgeF: 50,
+    minAgeM: 15, maxAgeM: null,
+    minAgeF: 15, maxAgeF: null,
     ageType: 'Solare'
   },
   {
@@ -1473,8 +1473,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Acquatici',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 10, maxAgeM: 60,
-    minAgeF: 10, maxAgeF: 60,
+    minAgeM: 10, maxAgeM: null,
+    minAgeF: 10, maxAgeF: null,
     ageType: 'Solare'
   },
   {
@@ -1514,8 +1514,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Combattimento',
     visitType: 'B1',
     validityYears: 1,
-    minAgeM: 10, maxAgeM: 40,
-    minAgeF: 10, maxAgeF: 40,
+    minAgeM: 10, maxAgeM: null,
+    minAgeF: 10, maxAgeF: null,
     ageType: 'Solare'
   },
   {
@@ -1524,8 +1524,8 @@ export const SPORTS_LIST: Sport[] = [
     category: 'Combattimento',
     visitType: 'B5',
     validityYears: 1,
-    minAgeM: 13, maxAgeM: 40,
-    minAgeF: 13, maxAgeF: 40,
+    minAgeM: 13, maxAgeM: null,
+    minAgeF: 13, maxAgeF: null,
     ageType: 'Solare'
   },
   // Tabella 2 - CIP
