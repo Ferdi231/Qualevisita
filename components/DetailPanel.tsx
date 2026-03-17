@@ -16,19 +16,29 @@ const EXTERNAL_KEYWORDS = [
   'orl', 
   'audiometria', 
   'oculistica', 
+  'oculistico',
   'fondo', 
   'fundus',
   'campimetria', 
   'stereopsi', 
   'vestibolare', 
+  'vestibolari',
+  'otorinolaringoiatrico',
+  'campo visivo',
   'sierologia', 
   'hiv', 
   'hbv', 
   'hcv', 
   'gravidanza', 
   'beta-hcg',
+  'creatinina',
+  'emocromo',
+  'ecocardiogramma',
+  'rx torace',
+  'torace',
   'rmn',
-  'risonanza'
+  'risonanza',
+  'patologia'
 ];
 
 // Keywords for Specialist Exams performed internally by the Sports Doctor
