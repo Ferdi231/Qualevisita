@@ -6,8 +6,9 @@ import { SportList } from './components/SportList';
 import { DetailPanel } from './components/DetailPanel';
 import { TableView } from './components/TableView';
 import { Activity, Stethoscope, Table2, Search as SearchIcon, X, Accessibility, Trophy } from 'lucide-react';
+import SportsProtocols from './components/SportsProtocols';
 
-type ViewState = 'search' | 'table';
+type ViewState = 'search' | 'table' | 'exams';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>('search');
@@ -80,6 +81,13 @@ const App: React.FC = () => {
             >
               <Table2 className="w-4 h-4 mr-2" />
               Consulta Tabella
+            </button>
+            <button 
+              onClick={() => setCurrentView('exams')}
+              className={`flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all ${currentView === 'exams' ? 'bg-white/50 text-blue-700 shadow-sm' : 'text-gray-500 hover:bg-white/30'}`}
+            >
+              <Activity className="w-4 h-4 mr-2" />
+              Esami Aggiuntivi
             </button>
           </nav>
         </div>
@@ -156,6 +164,17 @@ const App: React.FC = () => {
               <p className="text-gray-500 mt-1">Elenco completo delle visite per tutte le discipline censite, suddivise per categoria.</p>
             </div>
             <TableView onSelect={handleSelectSport} />
+          </div>
+        )}
+
+        {/* VIEW: EXAMS */}
+        {currentView === 'exams' && (
+          <div className="animate-fade-in">
+            <div className="mb-2">
+              <h2 className="text-2xl font-bold text-gray-900">Protocolli ed Esami Integrativi</h2>
+              <p className="text-gray-500 mt-1">Consulta i dettagli dei protocolli sanitari e gli esami aggiuntivi consigliati per disciplina.</p>
+            </div>
+            <SportsProtocols />
           </div>
         )}
 
