@@ -50,9 +50,9 @@ export const TableView: React.FC<TableViewProps> = ({ onSelect }) => {
                   onClick={() => onSelect(sport)}
                   className="hover:bg-blue-50 transition-colors group cursor-pointer border-b border-gray-100 last:border-0"
                 >
-                    <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900 sticky left-0 bg-white group-hover:bg-blue-50 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]">
-                    {sport.name}
-                    <div className="text-xs text-gray-400 font-normal group-hover:text-blue-500">{sport.category}</div>
+                    <td className="px-6 py-4 whitespace-nowrap sticky left-0 bg-white group-hover:bg-blue-50 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]">
+                    <div className="font-bold text-blue-700 uppercase tracking-tight">{sport.category}</div>
+                    <div className="text-sm font-medium text-gray-900">{sport.name}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                     <ProtocolBadge type={sport.visitType} />

@@ -100,8 +100,8 @@ const SportsProtocols: React.FC = () => {
                                 <tbody className="divide-y divide-slate-100">
                                     {filteredSports.map((sport: SportData) => (
                                         <tr key={sport.name} className="hover:bg-slate-50/50 transition-colors">
-                                            <td className="px-4 py-3 font-medium text-slate-800">{sport.name}</td>
-                                            <td className="px-4 py-3 text-slate-500">{sport.category}</td>
+                                            <td className="px-4 py-3 text-slate-500 italic text-xs">{sport.name}</td>
+                                            <td className="px-4 py-3 font-bold text-blue-700 uppercase tracking-tight">{sport.category}</td>
                                             <td className="px-4 py-3 text-center">
                                                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase transition-colors ${
                                                     sport.protocol.startsWith('B') 

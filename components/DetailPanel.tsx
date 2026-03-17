@@ -85,10 +85,12 @@ export const DetailPanel: React.FC<DetailPanelProps> = ({ sport, protocol }) => 
         
         <div className="flex justify-between items-start mb-4 gap-4 relative z-10">
           <div>
-            <span className="text-blue-100 text-xs font-bold tracking-wider uppercase bg-blue-800/40 border border-blue-400/20 px-2 py-1 rounded inline-block mb-2 shadow-[0_0_10px_rgba(59,130,246,0.2)]">
+            <h2 className="text-2xl md:text-3xl font-extrabold leading-tight drop-shadow-md uppercase tracking-tight text-white">
               {sport.category}
-            </span>
-            <h2 className="text-2xl md:text-3xl font-bold leading-tight drop-shadow-md">{sport.name}</h2>
+            </h2>
+            <div className="text-blue-100 text-lg font-medium opacity-90 mt-1">
+              {sport.name}
+            </div>
           </div>
           <div className="bg-white/10 backdrop-blur-md p-2 rounded-lg border border-white/20 shrink-0 shadow-inner">
              <ProtocolBadge type={sport.visitType} size="lg" />

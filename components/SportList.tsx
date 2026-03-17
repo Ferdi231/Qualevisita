@@ -32,12 +32,14 @@ export const SportList: React.FC<SportListProps> = ({ sports, selectedSportId, o
           >
             <div>
               <div className="flex justify-between items-start mb-2">
-                 <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{sport.category}</span>
                  <ProtocolBadge type={sport.visitType} />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 leading-tight mb-1 group-hover:text-blue-600 transition-colors">
-                {sport.name}
+              <h3 className="text-lg font-bold text-blue-600 leading-tight mb-1 uppercase tracking-tight">
+                {sport.category}
               </h3>
+              <div className="text-gray-900 font-medium group-hover:text-blue-500 transition-colors">
+                {sport.name}
+              </div>
             </div>
             
             <div className="mt-4 flex items-center text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
