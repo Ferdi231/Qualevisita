@@ -84,6 +84,41 @@ export const DetailPanel: React.FC<DetailPanelProps> = ({ sport, protocol }) => 
     });
   }
 
+  // Gruppo logico esami specialistici (ORL, Oculista)
+  const groupedExternalExams: { main: string, subs: string[] }[] = [];
+  const processedExams = new Set<string>();
+
+  const orlExams = externalExams.filter(e => e.toLowerCase().includes('otorinolaringoiatrico'));
+  const ocuExams = externalExams.filter(e => e.toLowerCase().includes('oculistico'));
+
+  if (orlExams.length > 0) {
+    const main = orlExams[0];
+    processedExams.add(main);
+    const subs = externalExams.filter(e => 
+      !processedExams.has(e) && 
+      (e.toLowerCase().includes('audiometria') || e.toLowerCase().includes('vestibolar'))
+    );
+    subs.forEach(s => processedExams.add(s));
+    groupedExternalExams.push({ main, subs });
+  }
+
+  if (ocuExams.length > 0) {
+    const main = ocuExams[0];
+    processedExams.add(main);
+    const subs = externalExams.filter(e => 
+      !processedExams.has(e) && 
+      (e.toLowerCase().includes('campo visivo') || e.toLowerCase().includes('fundus') || e.toLowerCase().includes('campimetria'))
+    );
+    subs.forEach(s => processedExams.add(s));
+    groupedExternalExams.push({ main, subs });
+  }
+
+  externalExams.forEach(exam => {
+    if (!processedExams.has(exam)) {
+      groupedExternalExams.push({ main: exam, subs: [] });
+    }
+  });
+
   const hasSpecialistExams = externalExams.length > 0 || internalSpecialistExams.length > 0;
 
   return (
@@ -192,19 +227,29 @@ export const DetailPanel: React.FC<DetailPanelProps> = ({ sport, protocol }) => 
             </div>
             
             {/* EXTERNAL EXAMS SECTION */}
-            {externalExams.length > 0 && (
+            {groupedExternalExams.length > 0 && (
               <div className="mb-4">
                 <p className="text-amber-800 text-sm font-semibold mb-2 flex items-center">
                    <AlertTriangle className="w-4 h-4 mr-1.5" />
                    DA EFFETTUARE ESTERNAMENTE:
                 </p>
-                <p className="text-amber-700 text-xs mb-2 pl-6">
-                   Il paziente <strong>DEVE</strong> presentarsi alla visita con il referto.
+                <p className="text-amber-700 text-xs mb-3 pl-6 italic">
+                   Il paziente deve portare il referto il giorno della visita.
                 </p>
-                <ul className="space-y-2 pl-6">
-                  {externalExams.map((exam, index) => (
-                    <li key={`ext-${index}`} className="flex items-start bg-white/80 p-2 rounded border border-amber-200 shadow-sm">
-                      <span className="text-gray-900 font-bold text-sm uppercase">{exam}</span>
+                <ul className="space-y-2.5 pl-6">
+                  {groupedExternalExams.map((group, index) => (
+                    <li key={`ext-group-${index}`} className="flex flex-col bg-white/90 p-3 rounded-lg border border-amber-200/50 shadow-sm hover:border-amber-300 transition-colors">
+                      <span className="text-gray-900 font-bold text-sm uppercase tracking-tight">{group.main}</span>
+                      {group.subs.length > 0 && (
+                        <div className="mt-1.5 flex flex-wrap gap-1.5 border-t border-amber-100 pt-1.5">
+                          <span className="text-[10px] font-bold text-amber-600 uppercase tracking-widest mr-1 self-center">Include anche:</span>
+                          {group.subs.map((sub, sIdx) => (
+                            <span key={`sub-${sIdx}`} className="bg-amber-100/50 text-amber-800 text-[10px] px-2 py-0.5 rounded border border-amber-200/30 font-medium">
+                              {sub}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </li>
                   ))}
                 </ul>
